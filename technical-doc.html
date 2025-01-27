@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Technical Documentation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        display: block;
+        margin: 15px;
+        font-family: "Roboto", sans-serif;
+        min-width: 250px;
+        color: #3c3c41;
+        background-color: #e3f0f1;
+        line-height: 1.5;
+      }
+
+      #navbar {
+        background-color: #f4f4f4;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        font-family: "Roboto", sans-serif;
+      }
+
+      #navbar header {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+      }
+
+      #navbar ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      #navbar ul li {
+        margin: 0;
+      }
+
+      #navbar .nav-link {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+      }
+
+      @media (min-width: 768px) {
+        #navbar {
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          padding: 20px;
+        }
+
+        #navbar ul {
+          flex-direction: row;
+          gap: 20px;
+        }
+
+        #navbar header {
+          font-size: 2rem;
+        }
+      }
+
+      table {
+        width: 50%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 16px;
+        text-align: left;
+      }
+      th,
+      td {
+        padding: 10px;
+        border: 1px solid #ddd;
+      }
+      th {
+        background-color: #f4f4f4;
+      }
+      tr:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+
+      .code {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        background-color: #f0f0f0;
+        padding: 15px;
+        border-radius: 8px;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 0.9rem;
+        color: #333;
+        overflow-x: auto;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      img {
+        display: block;
+        margin: 0 auto;
+      }
+
+      .link {
+        text-decoration: none;
+        color: #a8d2b6;
+      }
+
+      .link:hover {
+        text-decoration: underline;
+        color: #a8a2a6;
+      }
+
+      .introduction,
+      .JS_objects,
+      .JS_classes,
+      .JS_functions,
+      .JS_HTML_DOM,
+      .JS_AJAX,
+      .JS_JSON,
+      .reference {
+        font-size: 25px;
+        font-weight: bold;
+        text-decoration: underline;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <nav id="navbar">
+      <header>JavaScript Documentation</header>
+      <ul>
+        <li>
+          <a href="#introduction" class="nav-link">Introduction </a>
+        </li>
+        <li>
+          <a href="#JS_objects" class="nav-link">JS Objects </a>
+        </li>
+        <li>
+          <a href="#JS_functions" class="nav-link">JS Functions </a>
+        </li>
+        <li>
+          <a href="#JS_classes" class="nav-link">JS Classes </a>
+        </li>
+        <li>
+          <a href="#JS_HTML_DOM" class="nav-link">JS HTML DOM </a>
+        </li>
+        <li>
+          <a href="#JS_JSON" class="nav-link">JS JSON </a>
+        </li>
+        <li>
+          <a href="#JS_AJAX" class="nav-link">JS AJAX </a>
+        </li>
+        <li>
+          <a href="#reference" class="nav-link">Reference </a>
+        </li>
+      </ul>
+    </nav>
+    <main id="main-doc">
+      <section class="main-section" id="introduction">
+        <header class="introduction">Introduction</header>
+
+        <h4>What is JavaScript?</h4>
+        <p>
+          JavaScript is the programming language of the web. It can update and
+          change both HTML and CSS. It can calculate, manipulate and validate
+          data.
+        </p>
+        <h4>Why Study JavaScript?</h4>
+        <p>
+          JavaScript is one of the 3 languages all web developers must learn:
+        </p>
+        <ol>
+          <li>HTML to define the content of web pages.</li>
+          <li>CSS to specify the layout of web pages.</li>
+          <li>JavaScript to program the behavior of web pages.</li>
+        </ol>
+      </section>
+      <section class="main-section" id="JS_objects">
+        <header class="JS_objects">JS Objects</header>
+        <p>
+          The <em>Object</em> type represents one of JavaScript's data types. It
+          is used to store various keyed collections and more complex entities.
+          Objects can be created using the <code>Object()</code> constructor or
+          the object initializer / literal syntax.
+        </p>
+        <p>
+          Nearly all objects in JavaScript are instances of Object; a typical
+          object inherits properties (including methods) from Object.prototype,
+          although these properties may be shadowed (a.k.a. overridden). The
+          only objects that don't inherit from <code>Object.prototype</code> are
+          those with null prototype, or descended from other null prototype
+          objects.
+        </p>
+        <p>
+          Changes to the <code>Object.prototype</code> object are seen by all
+          objects through prototype chaining, unless the properties and methods
+          subject to those changes are overridden further along the prototype
+          chain. This provides a very powerful although potentially dangerous
+          mechanism to override or extend object behavior. To make it more
+          secure, <code>Object.prototype</code> is the only object in the core
+          JavaScript language that has immutable prototype — the prototype of
+          <code>Object.prototype</code> is always null and not changeable.
+        </p>
+      </section>
+      <section class="main-section" id="JS_functions">
+        <header class="JS_functions">JS Functions</header>
+        <p>
+          A JavaScript function is a block of code designed to perform a
+          particular task. A JavaScript function is executed when "something"
+          invokes it (calls it).
+        </p>
+
+        <h4>JavaScript Function Syntax</h4>
+        <p>
+          A JavaScript function is defined with the function keyword, followed
+          by a name, followed by parentheses <strong>()</strong>. <br /><br />
+          Function names can contain letters, digits, underscores, and dollar
+          signs (same rules as variables). The parentheses may include parameter
+          names separated by commas:
+          <strong>(parameter1, parameter2, ...).</strong>
+          <br /><br />
+          The code to be executed, by the function, is placed inside curly
+          brackets: <strong>{}</strong>
+        </p>
+      </section>
+      <section class="main-section" id="JS_classes">
+        <header class="JS_classes">JS Classes</header>
+        <p>
+          Classes are a template for creating objects. They encapsulate data
+          with code to work on that data. Classes in JS are built on prototypes
+          but also have some syntax and semantics that are unique to classes.
+        </p>
+        <p>
+          Use the keyword class to create a class. Always add a method named
+          <code>constructor()</code>:
+        </p>
+        <br />
+        <div class="code">
+          <code>class ClassName { constructor() { ... } }</code>
+        </div>
+        <br /><br />
+        Example:
+        <div class="code">
+          <code
+            >class Car { constructor(name, year) { this.name = name; this.year =
+            year; } }
+          </code>
+          <br /><br />
+          The example above creates a class named "Car". The class has two
+          initial properties: "name" and "year".
+        </div>
+        <p>
+          <strong
+            >A JavaScript class is not an object. It is a template for
+            JavaScript objects.</strong
+          >
+        </p>
+      </section>
+      <section class="main-section" id="JS_HTML_DOM">
+        <header class="JS_HTML_DOM">JS HTML DOM</header>
+        <p>
+          With the HTML DOM, JavaScript can access and change all the elements
+          of an HTML document.
+        </p>
+        <div class="code">
+          <p>
+            When a web page is loaded, the browser creates a Document Object
+            Model of the page. The HTML DOM model is constructed as a tree of
+            Objects:
+          </p>
+          <img
+            src="https://www.w3schools.com/js/pic_htmltree.gif"
+            alt="The HTML DOM Tree of Objects"
+          />
+        </div>
+
+        <p>
+          With the object model, JavaScript gets all the power it needs to
+          create dynamic HTML:
+        </p>
+        <ul>
+          <li>JavaScript can change all the HTML elements in the page.</li>
+          <li>JavaScript can change all the HTML attributes in the page.</li>
+          <li>JavaScript can change all the CSS styles in the page.</li>
+          <li>JavaScript can remove existing HTML elements and attributes.</li>
+          <li>JavaScript can add new HTML elements and attributes.</li>
+          <li>JavaScript can react to all existing HTML events in the page.</li>
+          <li>JavaScript can create new HTML events in the page.</li>
+        </ul>
+      </section>
+      <section class="main-section" id="JS_JSON">
+        <header class="JS_JSON">JS JSON</header>
+        <h4>What is JSON?</h4>
+        <ul>
+          <li>
+            JSON stands for <strong>J</strong>ava<strong>S</strong>cript
+            <strong>O</strong>bject <strong>N</strong>otation
+          </li>
+          <li>JSON is a lightweight data-interchange format</li>
+          <li>JSON is plain text written in JavaScript object notation</li>
+          <li>JSON is used to send data between computers</li>
+          <li>JSON is language independent *</li>
+        </ul>
+        <h4>Why Use JSON?</h4>
+        <p>
+          The JSON format is syntactically similar to the code for creating
+          JavaScript objects. Because of this, a JavaScript program can easily
+          convert JSON data into JavaScript objects. <br /><br />Since the
+          format is text only, JSON data can easily be sent between computers,
+          and used by any programming language. <br /><br />JavaScript has a
+          built in function for converting JSON strings into JavaScript objects:
+          <code>JSON.parse()</code> <br /><br />
+
+          JavaScript also has a built in function for converting an object into
+          a JSON string:
+
+          <code>JSON.stringify()</code>
+        </p>
+      </section>
+      <section class="main-section" id="JS_AJAX">
+        <header class="JS_AJAX">JS AJAX</header>
+        <h4>What is AJAX?</h4>
+        <p>
+          AJAX = <strong>A</strong>synchronous <strong>J</strong>avaScript and
+          <strong>XML</strong>. AJAX is not a programming language.
+        </p>
+
+        <p>AJAX just uses a combination of:</p>
+        <ul>
+          <li>
+            A browser built-in XMLHttpRequest object (to request data from a web
+            server).
+          </li>
+          <li>JavaScript and HTML DOM (to display or use the data).</li>
+        </ul>
+        <p>
+          AJAX allows web pages to be updated asynchronously by exchanging data
+          with a web server behind the scenes. This means that it is possible to
+          update parts of a web page, without reloading the whole page.
+        </p>
+        <h4>How AJAX works:</h4>
+        <img
+          src="https://www.w3schools.com/js/pic_ajax.gif"
+          alt="diagram explaining how AJAX works"
+        />
+
+        <table border="1">
+          <tr>
+            <td>1</td>
+            <td>
+              An event occurs in a web page (the page is loaded, a button is
+              clicked)
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>An XMLHttpRequest object is created by JavaScript</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>The XMLHttpRequest object sends a request to a web server</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>The server processes the request</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>The server sends a response back to the web page</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>The response is read by JavaScript</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Proper action (like page update) is performed by JavaScript</td>
+          </tr>
+        </table>
+      </section>
+      <section class="main-section" id="reference">
+        <header class="reference">Reference</header>
+        <p>
+          All the documentation in this page is taken from
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"
+            target="_blank"
+            class="link"
+          >
+            MDN</a
+          >
+          and
+          <a href="https://www.w3schools.com/js/" target="_blank" class="link">
+            W3Schools</a
+          >
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
